@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
   def index
-    @post = "コントロールで定義したインスタンス変数です"
+    @posts = Post.all
   end
 end
