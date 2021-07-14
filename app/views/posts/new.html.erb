@@ -1,0 +1,21 @@
+<h1>新規投稿ページ</h1>
+
+<p>htmlの投稿欄です</p>
+<form action="/posts" method="post">
+  <input type="text" name="content">
+  <input type="submit" value="投稿する">
+</form>
+
+<p>ヘルパーメソッドの投稿欄です</p>
+<%= form_with url: "/posts", method: :post, local: true do |form|%>
+  <%= form.text_field :content%>
+  <div>
+  <%= form.password_field :password%>
+  </div>
+  <%= form.submit "投稿する"%>
+  <%= form.check_box :content %>
+  <%= form.radio_button :content, :action%>
+<%end%>
+
+<p>link_toメソッドです</p>
+<%= link_to 'Googleへ飛ぶ', 'https://www.google.com/' %>
